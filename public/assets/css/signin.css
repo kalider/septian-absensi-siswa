@@ -1,0 +1,41 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #587181be;
+}
+
+.form-signin {
+  max-width: 400px;
+  padding: 50px;
+}
+
+.form-signin.mb-1{
+  margin-bottom: 1px;
+}
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 2;
+  border-bottom-left-radius: 2;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 2;
+  border-top-right-radius: 2;
+}
+
+.form-register {
+  max-width: 400px;
+  padding: 50px;
+}
