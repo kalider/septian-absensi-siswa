@@ -14,7 +14,7 @@ class PresenceController extends Controller
     private PresenceService $presenceService;
     private ScheduleService $scheduleService;
 
-    public function __construct(PresenceService $presenceService,scheduleService $scheduleService)
+    public function __construct(PresenceService $presenceService, ScheduleService $scheduleService)
     {
         $this->presenceService = $presenceService;
         $this->scheduleService = $scheduleService;
@@ -112,7 +112,7 @@ class PresenceController extends Controller
     public function pres(Request $request, int $id): Response
     {
         $presence = $this->presenceService->findPresTimeById($id);
-        $students = $this->presenceService->findAllPresWithStudentByTime($id, $presence->schedule_id);
+        $students = $this->presenceService->findAllPresWithStudentByTime($id, $presence->class_id);
 
         return response()->view('presence.pres', [
             'title' => 'Presensi',

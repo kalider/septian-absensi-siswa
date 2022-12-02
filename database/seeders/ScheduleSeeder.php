@@ -18,7 +18,7 @@ class ScheduleSeeder extends Seeder
         DB::table('schedules')->delete();
         DB::table('schedules')->insert([
             'id' => 1,
-            'day' => '2',
+            'day' => '1',
             'time' => '10:20-12:00',
             'time_to' => '1-3',
             'teacher_id' => 1,

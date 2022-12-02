@@ -34,7 +34,7 @@ class PresenceServiceImpl implements PresenceService
             ->leftJoin('teachers', 'schedules.teacher_id', '=', 'teachers.id')
             ->leftJoin('lessons', 'schedules.lesson_id', '=', 'lessons.id')
             ->leftJoin('classs', 'schedules.class_id', '=', 'classs.id')
-            ->select('presences_times.*', 'schedules.time_to AS schedule', 'teachers.name_teacher AS teacher' , 'lessons.name_lesson' ,'classs.name_class AS class')
+            ->select('presences_times.*', 'schedules.class_id', 'schedules.time_to AS schedule', 'teachers.name_teacher AS teacher' , 'lessons.name_lesson' ,'classs.name_class AS class')
             ->where('presences_times.id', '=', $id)
             ->get()->first();
     }
@@ -82,14 +82,14 @@ class PresenceServiceImpl implements PresenceService
         }
     }
 
-    public function findAllPresWithStudentByTime(int $id, int $schedule_id): Collection
+    public function findAllPresWithStudentByTime(int $id, int $class_id): Collection
     {
         return DB::table('students')
             ->leftJoin('presences', function ($join) use ($id) {
                 $join->on('presences.student_id', '=', 'students.id')
                     ->where('presences.time_id', '=', $id);
             })
-            ->where('students.class_id', '=', $schedule_id)
+            ->where('students.class_id', '=', $class_id)
             ->select('students.*', 'presences.status', 'presences.id as pres_id')->get();
     }
 }
