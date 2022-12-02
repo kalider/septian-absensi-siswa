@@ -25,8 +25,16 @@
             <table class="table table-striped">
                 <tbody>
                     <tr>
-                        <td>Tanggal</td>
+                        <td width="20%">Tanggal</td>
                         <td>{{$presence->date}}</td>
+                    </tr>
+                    <tr>
+                        <td>Mata pelajaran</td>
+                        <td>{{$presence->name_lesson}}</td>
+                    </tr>
+                    <tr>
+                        <td>Guru</td>
+                        <td>{{$presence->teacher}}</td>
                     </tr>
                     <tr>
                         <td>Kelas</td>
