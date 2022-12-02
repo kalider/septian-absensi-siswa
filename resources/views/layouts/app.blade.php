@@ -140,6 +140,12 @@
                                 Presensi
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{request()->is('report/daily') ? 'active': ''}}" href="/report/daily">
+                                <span data-feather="bar-chart" class="align-text-bottom"></span>
+                                Laporan Harian
+                            </a>
+                        </li>
 
                     </ul>
                 </div>
