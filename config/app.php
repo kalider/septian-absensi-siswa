@@ -185,7 +185,8 @@ return [
         App\Providers\LessonServiceProvider::class,
         App\Providers\ScheduleServiceProvider::class,
         App\Providers\PresenceServiceProvider::class,
-
+        App\Providers\PresenceReportServiceProvider::class,
+        
     ],
 
     /*

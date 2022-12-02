@@ -94,3 +94,7 @@ Route::controller(\App\Http\Controllers\PresenceController::class)->middleware([
     Route::get('/presence/{id}/pres', 'pres');
     Route::post('/presence/{id}/pres', 'doPres');
 });
+
+Route::controller(\App\Http\Controllers\PresenceReportController::class)->middleware([OnlyMemberMiddleware::class])->group(function() {
+    Route::get('/report/daily', 'daily');
+});
